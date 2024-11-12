@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <body>
+        <img src="sc.jpg" width="500" height="300">
+
+            <script>
+                    function isConsecutive(arr) {
+                    // 配列が空または1つの要素しかない場合は連続しているとみなす
+                if (arr.length <= 1) {
+                    return true;
+                }
+
+                // 配列をソートして順番通りに並べ替える
+                arr.sort((a, b) => a - b);
+
+                // 配列内の数値が連続しているかチェック
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] + 1 !== arr[i + 1]) {
+                    return false; // 連続していない場合
+                    }
+                }
+
+                return true; // 連続している場合
+                }
+
+                // 使用例
+                console.log(isConsecutive([3, 4, 2, 5, 1])); // true
+                console.log(isConsecutive([1, 2, 4, 5]));    // false
+
+            </script>
+    </body>
+</html>
